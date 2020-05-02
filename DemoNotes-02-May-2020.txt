@@ -1,0 +1,96 @@
+1. What are the basic requirements to build an End to End Web Application?
+	a) HTML
+	b) CSS
+	c) Client Side Script
+	       JavaScript, ECMAScript, TypeScript
+	d) Server Side Scripting Tech
+	       JSP, PHP, ASP.NET, Node JS etc..
+	e) Database
+	       MySql, Oracle, MongoDb etc..
+	f) Middleware
+	       Express, JsX etc..
+	g) DeskTop Publishing Tools
+	       Photoshop, Flash etc.
+	h) IDE's
+	        Visual Studio [code], Ecllipse etc..
+	i) Testing Frameworks / Tools
+	         XUnit, JUnit, Protractor, Jasmine,etc..
+
+- Web started in early 1990's 
+- Tim Berners Lee introduced the concept of Web.
+- Web was developed at "CERN".
+
+2. What are the Challenges in Modern Web Development?
+a) Unified UX (user experience)
+     - Application must provide same experience 
+       across any device, ie from PC to mobile.
+     - Application should not optimize.
+     - Mobile users must get access to everything.
+
+b) Fluid UX 
+    - User must stay on one page and get access to
+      everything from the page.
+    - There should not be any page navigations.
+    - New content must be added to the page without
+      reloading the complete page.
+
+c) Loosely Coupled and Extensible Architecture
+     - Without stopping the application, without un-install and re-install, the new details must be pushed into the application.
+
+d) Simiplified upgrade and deployment
+    - Install and open
+    - no-restart required
+    - single step installation
+
+3. What is Solution?
+A. Better build - SPA [Single Page Applications] or
+ 	        - Progressive Web Applications
+     Don't continue with traditional  web apps.
+
+4. Can we build SPA & Progressive Web Apps using 
+   JavaScript, JQuery?
+A. Yes.
+
+5. What is problem with JavaScript and JQuery? Why we are migrating to new technologies?
+- ECMA Script
+- JavaScript designed by - "Brendan Eich" in 1995
+   [ Known as Mocha → Later as LiveScript → JS]
+- JavaScript is a language used
+	Client Side 	: HTML
+	Server Side	: Node JS
+	Database 		: MongoDb
+	Animations Tools	: Flash
+- Browser Compatibility Issues
+- 2006 "John resig" - a library for JS - JQuery
+- JQuery [Write Less and Do More]
+- Reduce the Compatibility Issues
+
+Note: A language and Library can build Application but they can't control the Application flow.
+
+
+JQuery and JavaScript Issues
+=========================
+- Can't control application flow
+- Depend on lot of events.
+- lot of DOM manipulations
+- lot of references
+- lot of coding
+- Navigation issues [ history, location ]
+- Lot of Ajax explicitly
+- DataBinding issues
+
+What is Solution?
+- Better use any Framework.
+- Framework provides a set of libraries , language by using them we can build application.
+- Framework have the ability to control the application flow.
+- Like Knockout Js, Ember JS, Vue Js, Angular JS
+          BackBone Js
+
+Angular JS - Framework [Library - JavaScript]
+ [MVC, MVP, MVVM, Cordova, Ionic, NativeScript]
+Angular, React etc..
+TypeScript 
+
+
+
+
