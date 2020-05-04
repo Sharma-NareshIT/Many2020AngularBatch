@@ -1,0 +1,58 @@
+ What is Design Pattern?
+- Design patterns are the solutions for software design problems that occur in real-world software development. They are about creating objects, designing classes and handling communication.
+
+	The Gang of Four [GOF] patterns are considered as the foundation for all other patterns. THey are categorized into 3 groups
+	a) Creational Patterns
+	     [ object creation mechanism ]
+	b) Structural Patterns
+	     [ Defining Relation between enities]
+	c) Behavioral Patterns
+	     [ Communication ]
+
+	    What is Architectural Pattern?
+- Architectural Pattern is general re-usable solution for commonly occuring problem in software architecture. It is similar to a design pattern but have a broader scope.
+	  - MVC
+	  - MVP
+	  - MVVM
+	  - Microservices
+	  - Black Board System 
+	  - Event Driven
+	  - 3 Tier and N-Tier etc.       
+
+ What is a Framework?
+- Framework is an Software Architectural Pattern.
+
+  Java	- Spring
+  PHP	- Cake PHP, Code Igniter
+  Perl	- Catalyst, Dancer
+  Python	- Django , Flask , Grok
+  Ruby	- Ruby on Rails
+  .NET	- ASP.NET MVC
+  JavaScript - Angular JS, Knockout JS, BackBone JS
+	      etc..
+	         Knockout JS
+
+	              Angular JS
+- Angular JS is an open source, cross platform, JavaScript based framework introduced by "Google" and maintained by a large community of organizations and individuals.
+	
+	2010 Google  - Angular JS - Open Source
+	Latest Angular JS Version is 1.7.9 - 2019
+
+What are the issues with Angular JS ?
+- Angular JS is not designed for what you are using.
+- Hence lot of GAP's
+- Angular JS is JavaScript Based
+- Not Strongly Typed
+- It is not schema based in handling data.
+- Legacy Library
+- Slow not fast in rendering output.
+
+
+	var x = 10;     // number
+	x="John";     // valid
+
+
+     products = [ 
+         { Name: "TV", Price: 45000.55 }, 
+         { Names: 32000,  Price: "Mobile"}    // valid
+     ]
