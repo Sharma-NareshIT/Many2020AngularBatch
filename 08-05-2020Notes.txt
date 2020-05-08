@@ -1,0 +1,81 @@
+Setup Environment to Work with TypeScript
+====================================
+1. Install Node JS
+    - We are installing Node JS for Package Manager
+    - Web Developers can use various package mangers like NPM, Yarn, Ruby Gems, Grunt, Growl etc..
+    - Package Manager is a software tool used to install and copy libraries into our project from external servers.
+    - The package manager with Node Js is "NPM"
+
+     - Visit      https://nodejs.org/en/download/
+
+     - Download ".msi" for windows.
+     - Install Node JS from MSI file.
+
+ Test Node Js and NPM:
+  - Open Command Prompt
+  - Type the following command
+	C:\>node -v     [for node js version]
+	C:\>npm -v      [for npm version]
+
+  Note: Make sure that you install Node JS 10+ 
+
+2. Install TypeScript for your computer
+    - Open windows command prompt
+
+      C:\>npm install -g typescript@latest
+
+        -g     : Installs typescript globally.
+
+    - Verify TypeScript version  [ 3.8.3 ]
+
+       C:\>tsc  -v
+
+3. Install Visual Studio Code  IDE 
+    - IDE  is Integrated Development Environment
+    - It provides a platform from where we can build, debug, test and deploy application.
+    
+     https://code.visualstudio.com/
+
+
+	         TypeScript Architecture
+- TypeScript language is completely built with "TypeScript".
+- A low level language is capable of interacting with hardware services directly.
+- Every high level language requires low level features in the backgroud.
+
+1. TypeScript Core Compiler
+    - It verifies the code syntax
+    - It identifies the errors in your keywords, statements, datatype.
+	        var number:x = 10;  // wrong
+	        var x:number=10;   // correct
+	        var x:numbr = 10;   // numbr not found
+	        var x:number = "A"; // wrong
+     - core.ts, program.ts, scanner.ts, parser.ts, checker.ts, emitter.ts
+
+2. Standalone TypeScript Compiler
+    - Browser can't understand TypeScript
+    - TypeScript code is Transcompiled into JavaScript
+       by using "TypeScript Standalone Compiler"
+    - It is managed by using "tsc.ts"
+    - It is transcompiler [ converting the TS code into JS].
+
+3. Language Service:  It provides all the data and logic required for compilers in order to compile and transcompile your code.
+	"services.ts"
+
+4. TsServer  [server.ts] : It is a typescript server, where your typescript code is hosted , compiled , process and response generated.
+
+
+5. VS Shim [shim.ts] : Platform Neutral , It make your code understandable to various operation systems.
+
+6. VS Managed Language Service : It is the final code which is understandable to every OS.
+
+7. Editors:  It contains support for various editors like VS Code, Sublime , WebStrom etc..
+
+
+
+
+
+
+
+
+
+     
