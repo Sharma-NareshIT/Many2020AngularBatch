@@ -1,0 +1,80 @@
+Setup Environment for TypeScript:
+1. Install Node JS  for a package manager called NPM
+
+      - Visit the following URL
+       https://nodejs.org/en/download/
+      - Download and Install  ".msi" for your windows
+      - Test from Command Prompt
+
+	C:\> node -v
+	C:\> npm -v
+
+2. Install TypeScript
+
+	- Open Command Prompt
+	- Type the command
+
+	C:\>npm install  -g typescript@latest
+
+ 	-g   : global
+
+	- Test TypeScript version
+
+	 C:\>tsc -v
+
+3. Download and Install Visual Studio Code [IDE]
+
+	https://code.visualstudio.com/
+
+
+4. Open VS Code  Home screen and select the link
+	"Install Support for JavaScript"
+
+5. Goto VS Code "Extenstions" , search for following extentions and Install for VS Code.
+	
+	- ESLint
+	- TSLint
+	- VsCode-Icons
+	- LiveServer
+	- Open in Browser
+
+6. Create a new folder for typescript project
+	C:\TypeScriptOnlineClass
+
+7. Open your project  folder in VS Code
+
+8. Create a new File 	"[+]NewFile"
+
+	    hello.ts
+	    -----------
+var msg = "Welcome to TypeScript";
+document.write("<h2>" + msg + "</h2>");
+
+
+9. Goto "Terminal Menu" and select  "New Terminal"
+	  [ Ctrl + ` ]      backtick 
+
+10. Transcompile TS into JS
+
+        C:\TypeScriptOnlineClass>tsc hello.ts
+        [It generates hello.js]
+
+11. Create a new HTML File by name
+	        "index.html"
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="hello.js" type="text/javascript"></script>
+ </head>
+</html>
+	 
+
+12. Right CLick in the HTML page and select
+	"Open with Live Server"
+	             (or)
+	"Open with Browser"
+
+	
+
+
+
