@@ -1,0 +1,90 @@
+1. Check for a WebServer on your Windows PC
+       - Control Panel
+       - Administrative Tools
+       - IIS [Local Web Server - with windows]
+
+2. If you PC is not having IIS then Add IIS
+      - Control Panel
+      - Program and Features
+      - Click on "Turn Windows Features ON or OFF"
+      - Select "Internet Information Services"
+      - OK
+
+3. IIS is local web server where you can create "Websites", host your content and manage your sites.
+
+4. Test your Local Web Server
+      - Open any browser  
+      - Type the following URL
+	http://localhost
+	         (or)
+	http://127.0.0.1
+
+5. Create a new WebSite 
+      - WebSite is a virtual directory on webserver.
+      - This virtual directory provides access to 
+         various resources on webserver.
+    a) Open IIS
+                Run → Inetmgr
+                Control Panel → Administrative Tools → IIS
+
+    b) Expand Local computer [http://localhost]
+    c) Expand "Sites" folder
+    d) Right Click on "Default Website"
+    e) Select "Add Virtual Directory"
+    
+           Alias [Site Name] :  TypeScriptOnline
+           Physical Path	      :  C:\TypeScriptOnlineClass
+ 
+     f) OK
+
+
+       URL-  http://127.0.0.1/TypeScriptOnline
+       Physical Path :  C:\TypeScriptOnlineClass
+
+Ex:
+1. Goto your PC  "C" dirve and create a new folder
+	"C:\EbayShopping"
+
+2. Open IIS
+	Run → Inetmgr
+
+3. Create a new Website
+   	
+	Virtual Name :  EbayShopping
+	Physical Path:  C:\EbayShopping
+
+4. Open Notepad and type the following code
+	
+         var  msg = "Ebay | Shopping Online";
+         document.write("<h2>" + msg + "</h2>");
+
+5. Save the file into your project folder by name
+	        "index.ts"
+
+             C:\EbayShopping\index.ts
+
+6. Open your Physical Path in Command Prompt
+
+7. Compile Index.ts
+	> tsc  index.ts
+	   *It generates index.js file*
+
+8. Open Notepad and create a HTML file
+
+<!DOCTYPE html>
+<html>
+<head>
+      <script src="index.js"> </script>
+</head>
+</html>
+
+9. Save into your project location by name
+	        "index.html"
+10. Open Any Browser and Request
+
+          http://localhost/EbayShopping
+          http://127.0.0.1/EbayShopping
+
+
+
+
