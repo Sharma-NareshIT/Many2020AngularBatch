@@ -1,0 +1,149 @@
+	  TypeScript Language Basics
+1. Variables
+2. DataTypes
+3. Operators
+4. Statements
+
+		Variables
+- Variables of storage locations in memory, where you can store a value and use it as a part of any expression.
+- JavaScript variables are implicitly typed. The data type of variable will be determined according to the value assigned.
+		x = 10;   // number
+		x = "A";  // string
+		x = true; // boolean
+
+- TypeScript variables are explicitly typed and strongly typed. You have to defined data type and you can restrict the type.
+
+	 variableName:dataType
+	  x:number = "A"; // invalid
+                    x:number = 10;   // valid
+
+- Variables have 3 configuration methods
+	1. Declare
+	2. Render / Assign
+	3. Initialize
+- Declaring  is the process of defining the scope and name of variable.
+- Rendering is the process of assigning a value.
+- Initialization is the process of assigning a value into variable while declaring.
+
+	var x ;	// declaring
+	x=10;	// rendering
+	var x= 10; // initializing
+- JavaScript variables doesn't require declaring if javascript is not in strict mode.
+	        x = 10;   // valid
+- If JavaScript is in strict mode  then it is mandatory to declare variable.
+	        x=10;  // invalid
+
+	        var x;
+	        x=10;      // valid
+
+- TypeScript is by default in Strict Mode
+- It is mandatory to declare variables in TypeScript.
+- Variables in TypeScript can be declared by using the following keywords
+	a) var
+	b) let
+	c) const
+
+var :
+1. It defines function scope variable, you declare in any block of a function and can access from any block in the function.
+2. var allows
+	a) declaration
+	b) rendering
+	c) initialization
+ Ex:
+function f1() {
+    var x;      //declaration
+    x=10;       // rendering
+    if(x==10) {
+        var y = 20;  //initialization
+    }
+    console.log("x=" + x + "\n" + "y=" + y);
+}
+f1();
+
+3. var allows shadowing
+    - shadowing is the process of re-defining a variable with in the scope.
+    EX:
+    function f1() {
+    var x = 10; // initialization
+    if(x==10) {
+        x=20;   // rendering
+        var x = 30; // shadowing
+        var y = 20;  //initialization
+    }
+    console.log("x=" + x + "\n" + "y=" + y);
+}
+f1();
+
+4. var allows Hoisting 
+     - It can tell the compiler where the declaration part is present.
+     - So that compiler first reaches to that location.
+
+Ex:
+function f1() {
+   x = 10;
+   console.log("x=" + x);
+   var x;       // x is hoisted
+}
+f1();
+
+let :
+ - It defines block scope variable.
+
+Ex:
+function f1() {
+  var x = 10;
+  if(x==10) {
+      let y = 20;  // intialization
+      let z;        // declaration
+      z=30;        // rendering
+  }
+ console.log(`x=${x}\ny=${y}\nz=${z}`);  //y-z not found
+}
+f1();
+
+ - A variable can be access only in the block where it is declared.
+ - It allows
+	a) declaring
+	b) rendering
+	c) initialization
+ - It will not allow shadowing
+ Ex:
+function f1() {
+  var x = 10;
+  if(x==10) {
+      let y = 20;
+      let y = 30;    // invalid
+  }
+}
+f1();
+
+ - It will not allow hoisting
+ Ex:
+ function f1() {
+   x = 10;	// invalid - used before declaring
+   console.log("x=" + x);
+   let x;   
+}
+f1();
+
+const:
+1. const defines block scope variable.
+2. const allows only initialization.
+	- no declaring
+	- no rendering
+3. const will not allow shadowing.
+4. const will not allow hositing.
+
+Ex:
+function f1() {
+   const x = 10;   // valid
+   const x = 20;  // invalid
+   const x;   // invalid
+   x=10;       // invalid
+}
+f1();
+
+
+
+
+
