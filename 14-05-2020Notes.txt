@@ -1,0 +1,110 @@
+- Global variables are declared outside the function.
+
+Ex:
+var x;
+let y;
+const z = 30;
+function f1() {
+  x=10;
+  y=20;
+  console.log(`Function-1 X=${x} Y=${y} Z=${z}`);
+}
+function f2() {
+  x=20;
+  y=30;
+  console.log(`Function-2 X=${x} Y=${y} Z=${z}`);
+}
+f1();
+f2();
+
+FAQ: Can I declare any variable inside function with global scope?
+A. Yes. Global variables inside a function a defined by using "window" object, which you can test only in HTML page.
+
+Ex:
+<script>
+    function f1() {
+        window.x = 10;
+    }
+    function f2() {
+        document.write("x in f2 " + x);
+    }
+    f1();
+    f2();
+</script>
+
+- Variable Naming Conventions
+    a) Variable name must start with an alphabet or 
+         underscore. It can't start with numeric or any
+         other special chars.
+
+	let  price = 2300.44;		valid
+	let  _price = 34000.44;	valid
+	let price_  = 34000.44;	valid
+	let price_12 = 34500.55; 	valid
+	let 12_price = 45000.55; 	invalid
+	let price12 = 3400.44;	valid
+
+   b) Variable name can't be more than 255 chars long.
+   c)  Always use cameCase for naming variables.
+
+	  txtPassword
+	  txt  [prefix] 	- must define object
+	  Password [suffix]   - purpose of object
+
+    d) Variable name must speak what it is.
+
+	              Data Types
+- In Computer programming the "type" was introduced in early 1976 by Parnas, Shore & Weiss.
+- Type Related to Representation and Behavior
+- Type is also related to value space.
+- Started with ALGOL, Pascal, Simula and CLU.
+
+Definition: Technically data type determines the type of value stored in memory reference. It configures the behavior, space and representaiton.
+
+- JavaScript is implicitly typed.
+- TypeScript is explicitly typed.
+
+       let variableName : type ;
+- Typescript  "any" type is considered as the Root type for all datatypes.
+- All datatypes used in typescript are derived from "any".
+- The typescript data types are categorized into 2 Groups
+	1. Primitive Types
+	2. Non-Primitive Types
+
+Note: Type are categorized into 6 types as per Data Structures
+	a) Abstract data types
+	b) Metaclass
+	c) Primitive Types
+	d) Statistical data types
+	e) String
+	f) Tree structures
+
+Primitive Types:
+- The range of primitive data type is avilable and depended on the specific programming language.
+- Primitive types use a memory stack for storing values.
+- A Stack memory uses LIFO.
+- They have a fixed range for values
+- Always values fall between mix and max or have a specific value in memory.
+
+     ex: 
+	byte     8-bits    -128 to +127    0 to 255
+	            16-bits  -32768 to +32767  0-65535
+- Primitive type are pre-defined for language.
+- Built-in types are know as primitive.
+- TypeScript primitive types are
+	a) number
+	b) boolean
+	c) string
+	d) null
+	e) undefined
+
+
+
+
+
+
+
+
+	  
+   
+
