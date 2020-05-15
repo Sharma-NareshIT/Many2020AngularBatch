@@ -1,0 +1,104 @@
+	TypeScript Primitive DataTypes
+1. number:
+    - It is used to specify that the value must be numeric value.
+
+	let x:number;
+
+    - A numeric value can be any one of the following
+	
+	singed integer	+10    -10
+	unsigned integer	10
+	floating point	4.5
+	double		450.649
+	decimal		4.5966969685883 [29]
+	exponent		2e3    2x10[3] = 2000
+	hexadecimal	0xf00d
+	octal		0o744
+	binary		0b1010
+
+	let  hexa:number = 0xf00d;
+	let  exp:number = 2e3;
+	let  bin:number = 0b1010;
+
+Ex:
+	         numbertype.ts
+
+let signed:number = -10;
+let decimal:number = 4.5969979799583;
+let exponent:number = 2e3;
+let binary:number   = 0b1010;
+let hexa:number = 0xf00d;
+console.log("Signed=" + signed + "\n" + "Decimal=" + decimal + "\n" + "Exponent=" + exponent + "\n" + "Binary=" + binary + "\n" + "Hexadecimal=" + hexa);
+
+2. string
+    - String is literal with group of characters enclosed in single quotes, double quotes or backtick.
+    - A string literal comprises of alpha numeric and special characters.
+    - A string literal can be stored in memory by allocating the type as "string".
+
+	Syntax:
+		let  x:string;
+    - String literal can be defined by using
+	a) Single Quote
+	       let name:string = 'John';
+	b) Double Quote
+	       let name:string = "John";
+	c) BackTick
+	       let name:String = `John`;
+
+    - Outer and Inner strings are swapped with single and double quote vice versa.
+
+    - When you have to represent a string within another string then you need to swap bettwen inner and outer string with single and dobule quotes.
+
+    Syntax: OuterString in double quotes
+	InnerString in single quotes
+
+     let msg:string="<a href='home.html'>Home</a>";
+
+    Syntax: OuterString in SingleQuotes
+	 InnerString in Double Quotes
+
+    let msg:string='<a href="home.html">Home</a>';
+
+   - BackTick newly introduced into ES5
+   - BackTick represents a Templated String
+   - Templated String is a string with expressions.
+   - Expression can be embeded into string instead of concat.
+   - The expression within a string representation can be defined by using   "${ }" and It is supported only for a string in backtick.
+
+  Syntax:
+         let str:string = `string ${expression} string`;
+
+  Ex:
+	  stringtype.ts
+let username:string = "John";
+let age:number = 22;
+console.log("Hello!"+" "+username+" "+"you will be"+ " " +(age+1)+ " " + "Next Year");
+console.log(`Hello! ${username} you will be ${age+1} next year`);
+
+     - A string literal with special chars will allways have problem with compiler, as it can't recognize few special chars because they have a different functionality in terms of compiler.
+     - Due to this a compiler will escape printing of few special characters.
+     - Any special character which is escaping can be printing by preciding with "\".
+     - "\" is used to print the non-printable characters.
+
+  Ex:
+          let path:string = "D:\Images\pic.jpg";
+
+          O/P:   D:Imagespic.jpg
+
+  Ex:
+   let path:string = "\"D:\\Images\\pic.jpg\"";
+   console.log(`Path=${path}`);
+
+    O/P:   Path="D:\Images\pic.jpg"
+
+ String Manipulations
+  
+
+	
+
+
+
+
+
+
+    
