@@ -1,0 +1,114 @@
+	TypeScript Language Basics
+- Variables
+- DataTypes
+	1. Primitive DataTypes
+	    a) number
+	    b) string
+
+String Handling Functions in TypeScript
+
+1. charAt() : It returns the character at specified index.
+
+	   let  msg:string = "Welcome";
+	   console.log(msg.charAt(0));    // W
+
+
+2. charCodeAt():  It returns the unicode of the char
+	            at specified index. [UTF Standards]
+
+	            A = 65    Z=90
+Ex:
+let msg:string = "Welcome to TypeScript";
+console.log(msg.charCodeAt(0));          // W = 87
+
+3. concat() : It is used to combine strings.
+
+    Syntax:
+              yourstring.concat(otherString1, string2, ...);
+
+Ex:
+let msg1:string = "Hello !";
+let msg2:string = "Welcome to ";
+let msg3:string = "TypeScript.   "
+let msg:string = msg1.concat(msg2, msg3);
+console.log(msg);
+
+4. endsWith()   ]   They are used to verify whether a
+5. startsWith()  ]   string is starting or ending with
+	             specified chars. They return a 
+	             boolean true or false.
+
+Ex:
+let cssEffectName:string = "label-control";
+if(cssEffectName.startsWith("form")==true) {
+    console.log(`${cssEffectName} Effect Belongs to Form`);
+} else {
+    console.log(`${cssEffectName}  is not a Form Effect`);
+}
+
+6. indexOf()      :   Reutrns the index number of 
+	            specified char in a string. 
+
+7. lastIndexOf():  Returns the last occurance index
+	           number of specified char in a string.
+
+ These functions will return "-1" when specified char is not available in given string.
+
+
+Ex:
+let userEmail:string = "john@gmail.com";
+let atPosition:number = userEmail.indexOf("@");
+let dotPosition:number = userEmail.lastIndexOf(".");
+
+if(atPosition<=2 && ((dotPosition-atPosition)<1)){
+    console.log("Invalid Email");
+} else {
+    console.log("Email Verified");
+}
+
+
+8. match() : It is a boolean function used to verify
+	  whether the given string is matching
+	  with a regular expression.
+
+ Syntax:
+        yourString.match(regExpression); // true/false
+
+Ex:
+let userName:string = "DAVID";
+let regExp:any = /[A-Z]{4,10}/;
+if(userName.match(regExp)) {
+    console.log("Name Accepted");
+} else {
+    console.log(`${userName} - This is not Valid:Only Uppercase 4 to 10 Chars Allowed`);
+}
+
+9. repeat()  : It returns a new string with specified
+	    number of copies of an existing string.
+
+Ex:
+let message:string = "Welcome to TypeScript.\n";
+let data:string = message.repeat(3);
+console.log(data);
+
+10. replace()  : It can search a string for specified 	     	       value and replace with new value.
+
+ Syntax:
+          str.replace("oldValue", "newValue");
+
+Ex:
+let message:string = "Welcome to TypeScript.\n";
+let data:string = message.replace("TypeScript", "JavaScript");
+console.log(data);
+
+
+
+
+
+
+
+
+
+
+
+
