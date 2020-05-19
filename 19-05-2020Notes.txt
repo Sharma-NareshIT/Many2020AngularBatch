@@ -1,0 +1,144 @@
+slice()  : It is used to extract a part of the string by 	using index range.
+
+	Syntax:   string.slice(startIndex, endIndex)
+
+ Note:  It will read upto  endIndex-1
+
+Ex:
+let message:string = "Welcome to TypeScript";
+console.log(message.slice(0,6));   // Welcom
+
+
+split() :  It is used to split the string at specified literal.
+              It identified a separator and splits and stores
+              into an array.
+
+Ex:
+let message:string = "TV-34000-InStock";
+let newString = message.split('-');
+console.log(`Name=${newString[0]} \n Price=${newString[1]}\n Stock=${newString[2]}`);
+
+
+substring() :  It extracts a string but will not include
+	     the end index.
+
+substr()      : It extracts a string from specific index
+	    and includes the end index.
+
+Ex:
+	message.substring(start, endIndex)
+	message.substr(start, endIndex)
+
+trim()      : It removes the leading white spaces from a
+	stirng.
+
+
+let message:string = "     Welcome to TypeScript";
+console.log(message.trim());
+
+toUpperCase():    It is used to convert into uppercase
+
+toLowerCase():    It converts into lowercase.
+
+ Ex:
+        string.toUpperCase();
+        string.toLowerCase();
+
+String Formatting Functions:
+1. anchor()	It creates <a> element
+2. big()		Display large font 
+3. bold()		It applies <b> 
+4. Italics()
+5. fontcolor()	string.fontcolor('red')
+6. fontsize()	It changes font size
+7. strike()		uses <strike> element
+8. sup()		Super script <sup>
+9. sub()		Sub Script <sub>
+
+
+Primitive Types
+1. number
+2. string
+3. boolean type
+
+	               Boolean Type
+- In computer programming boolean types are used in decision making.
+- A boolean type in JavaScript can handle
+	true	= 1
+	false	= 0
+
+	 true + true  ?   // valid  =  2
+
+EX:bool.js
+var stock = false;
+if(stock==1) {
+    console.log("Avialable");
+} else {
+    console.log("Out of Stock");
+}
+
+
+
+
+- In TypeScript boolean types can't handle 0 or 1, they are defined only by using "true or false".
+
+Ex:
+let inStock:boolean = true;
+if(inStock==true) {
+    console.log("Product Available");
+} else {
+    console.log("Out of Stock");
+}
+	
+     inStock == 1   // invalid
+
+
+	               Undefined Type
+- not defined  : It means that the reference not found.
+- undefined    : It means that value not provided.
+
+- Undefined is type used to verify whether value is provided or not. 
+- Any variable declared as undefined type can have only "undefined" value.
+
+Note: TypeScript supports Union of DataTypes, so that a variable can be configured to handle different types of values.
+
+  Syntax:
+         let variableName:dataType1 | dataType2;
+         let variable:string | number;
+         variable = "A";
+         variable = 10;
+
+Ex:
+let productName:string = "Samsung TV";
+let productPrice:number|undefined;
+productPrice = 34000.54;
+if(productPrice==undefined) {
+    console.log(`Name=${productName}`);
+} else {
+console.log(`Name=${productName}\nPrice=${productPrice}`);
+}
+
+		Null Type
+null   and empty
+
+ null is an exception returned by application when it is unable to find a value dynamically in a specific reference.
+
+let name:string; → compiling → set → name=undefined
+
+let name:string; → run time → set → name=null
+
+Ex:
+let username:string|null;
+username = prompt("Enter Name");
+if(username==null) {
+    document.write("Input Canceled");
+} else if(username=="") {
+    document.write("Name can't be Empty");
+} else {
+    document.write(`Hello ! ${username}`);
+}
+
+ .html
+<script src="nulldemo.js"> </script>
+ 
+           
