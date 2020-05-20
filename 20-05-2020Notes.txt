@@ -1,0 +1,50 @@
+Primitive Types
+- number
+- string
+- boolean
+- null
+- undefined
+		"union of types"
+
+Non-Primitive Type
+- A Non Primitive type is derived from Primitive Type.
+- The data type which is derived from Primary types is know as Non-Primitive Type.
+- Are stored in memory heap [buffer].
+- Don't have fixed range for values.
+- Value range will vary according to memory available.
+- TypeScript Non-Primitive types are
+	a) Array 
+	b) Object
+	c) Regular Expression
+
+		Array Type
+- Arrays are used in computer programming to reduce overhead and complexity.
+- Arrays can reduce overhead by storing values in sequential order.
+- Arrays can reduce complexity by storing many values under one name.
+- Array stored in sequential order but allows access from any random location.
+- Array can store various types values.
+- Array size can be changed dynamically.
+- TypeScript can allow array to store various types of values. and also can restrict array to store similar type of values.
+
+Declaring Array in TypeScript:
+
+       let variableName:datatype[];
+
+       [ ] → Meta  character → Range of values
+        ?
+        *
+        +
+
+       let  names:string[];      // store only string types
+       let  values:any[];          // any type values
+
+- Array declaration requires memory initialization or memory allocation.
+- Array memory can be initialized by using Array meta character "[ ]" or by using "Array()" constructor.
+
+      let values:string[] = [ ];
+      let values:string[] = new Array();
+
+	       (or)
+     let products:string[];
+     products = new Array();
+
