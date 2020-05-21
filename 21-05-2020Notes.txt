@@ -1,0 +1,82 @@
+let names:dataType = [ ];
+let names:dataType = new Array();
+
+What is difference between "[ ]" and "Array()"?
+- Array meta character "[ ]" is used for configuring a "Tuple".
+- Tuple is a collection that allows different types of values when datatype is defined as "any" type.
+
+Syntax:
+ let  values:any[] = [10, "A", true] ;    // valid
+
+
+- Array constructor "Array()" will not allow different types of values even when the datatype is defined as "any" type.
+- Array constructor reads the first value and identifies its datatype then will fix the memory for that specified datatype. 
+
+Syntax:
+let values:any[] = Array("A",10);   // invalid number not
+			       allowed.
+let values:any[] = Array(10, "A"); // invalid string not
+			      allowed
+
+How to store values into an Array?
+- You can store values into Array by refering to Array properties.
+
+How to Read values from an Array?
+- You can read values from Array by refering to Array properties.
+
+Ex:
+let values:number[] = [10, 20, 30, 40];
+values["1"]=200;
+values[2] = 300;
+for(var property in values) {
+    console.log(`${property} [${typeof property}] - ${values[property]}`);
+}
+
+- Array properties are string type. They refer the same index number where the value is stored.
+
+- You can also read values from an Array by using a Destruction technique.
+
+Ex: Without Destruction
+
+let products:string[] = ["Samsung TV", "JBL Speakers"];
+let tv = products[0];
+let speakers = products[1];
+console.log(`TV=${tv} \n Speakers=${speakers}`);
+
+Ex: Using Destruction
+
+let products:string[] = ["Samsung TV", "JBL Speakers"];
+let [tv, speakers] = products;
+tv = "Samsung LED TV";
+console.log(`TV=${tv} \n Speakers=${speakers}`);
+console.log("TV=" + products["0"]);
+
+
+	          "Array Manipulations"
+1. Reading and Printing Values 
+    - toString()	: returns array elements by
+		  concatinating with "," separator
+    - join() 	                  : returns array elements by
+		  concatinating with custom
+		  separator.
+    - find()		: It can search for a value in
+		  array based on given condition 		  and return the first occurance
+		  value.
+    - filter()		: It is similar to find() but returns
+		  all values that math the given
+		  condition.
+    
+let sales:number[] = [10000, 4200, 6000, 23000, 5200];
+
+function Search(value) {
+   return value>=10000;
+}
+console.log(sales.filter(Search));
+
+
+
+
+
+
+
+
