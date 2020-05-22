@@ -1,0 +1,108 @@
+	        Array Manipulations
+1. Reading Values
+    
+ Function		Description
+-------------------------------------------------------------------
+ toString()	     It reads and returns all array elements
+	     seperated with ","
+  
+  join()	     It reads and returns all array elements
+	     seperated with custom delemiter.
+
+ Ex:
+let products:string[] = ["TV", "Mobile"];
+console.log(products.toString());
+console.log(products.join("-->"));
+
+  for..of 	    For statement can use "of" operator
+	    to read all elements from an array.
+
+Ex:
+let products:string[] = ["TV", "Mobile"];
+for(var item of products) {
+   console.log(item);
+}
+
+
+  for..in          For statement can use "in" operator
+	    to read all properties from an array.
+
+Ex:
+let products:string[] = ["TV", "Mobile"];
+for(var property in products) {
+   console.log(`${property} - ${products[property]}`);
+}
+
+   for loop     Loop comprises of initialization, 	    condition and counter. It is good when
+	    counter will not change dynamically.
+
+Ex:
+let products:string[] = ["TV", "Mobile"];
+for(var i=0; i<products.length; i++) {
+   console.log(products[i]);
+}
+
+   slice()	     It reads the array elements between
+	     specified index and returns as an array.
+	
+ 	      slice(startIndex, endIndex);
+                        slice(1,4);      // upto 3  [4-1]
+                        slice(1);        // 1 to end
+Ex:
+let products:string[] = ["TV", "Mobile", "Shoes"];
+console.log(products.slice(1));
+
+   find()          It can search an array for specified
+	    values based on given condition and
+                      return only first occurance value that
+	    matches given condition.
+
+                     Syntax:
+	   arrayName.find(function(){ return value });
+  
+Ex:
+let sales:number[] = [1400, 5460, 5100, 2300, 6300];
+let products:string[] = ["Shoe", "TV", "Mobile"];
+
+console.log(products.find(function(val){return val=="TV"}));
+
+function Search(val) {
+  return val>=5000;
+}
+console.log(sales.find(Search));
+
+
+  filter()	        It is similar to find() but returns all
+	        values that match the given condition.
+	        It returns the result as an Array.
+
+Ex:
+let sales:number[] = [1400, 5460, 5100, 2300, 6300];
+let products:string[] = ["Shoe", "TV", "Mobile"];
+console.log(products.filter(function(val){return val=="TV"}));
+
+function Search(val) {
+  return val>=5000;
+}
+console.log(sales.filter(Search));
+
+
+2. Search for Values in Array
+ 
+ Function		Description
+ ==========================================
+ find()		Returns first occurance value
+ filter()		Returns all occurance values
+ indexOf()		Returns first occurance index
+ lastIndexOf()	Returns last occurance index
+
+Ex:
+let products:string[] = ["Shoe", "Mobile"];
+let searchString:string = "TV";
+if(products.indexOf(searchString)==-1) {
+   console.log(`${searchString} Not Found`);
+} else {
+   console.log(`${searchString} found at ${products.indexOf(searchString)}`)
+}
+
+  
