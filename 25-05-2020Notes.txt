@@ -1,0 +1,225 @@
+3. Add a new value into Array
+
+Function		Description
+========================================
+push()	    It adds a new item as last element
+unshift()       It adds a new item as first element
+splice()         It adds a new item at any specified
+	    location.
+
+
+Ex: push("item1", "item2", ...)
+
+let products:string[] = ["Shoe", "Mobile"];
+products.push("TV");
+for(var property in products) {
+   console.log(`[${property}]-${products[property]}`);
+}
+
+O/P:
+[0]-Shoe
+[1]-Mobile
+[2]-TV
+
+Ex: unshift("item1", "item2", ...)
+
+let products:string[] = ["Shoe", "Mobile"];
+products.unshift("TV");
+for(var property in products) {
+   console.log(`[${property}]-${products[property]}`);
+}
+
+O/P:
+[0]-TV
+[1]-Shoe
+[2]-Mobile
+
+Ex: splice(startIndex,noOfItemsToRemove, "newItem1", "newItem2", ...)
+
+let products:string[] = ["Shoe", "Mobile"];
+products.splice(1,0,"TV");
+for(var property in products) {
+   console.log(`[${property}]-${products[property]}`);
+}
+
+
+O/P:
+[0]-Shoe
+[1]-TV
+[2]-Mobile
+
+4. Remove values from an Array
+
+ Function		Description
+ ------------------------------------------------------------------
+ pop()	   It removes and returns last item.
+ shift()	   It removes and returns first item.
+ splice()       It removes the specified item by its index.
+
+
+Note:
+What do you know about Reflection in OOP?
+What do you know about Refaction in OOP?
+ It is used to encapsulate all the specified members into a function or method so that you can reuse them.
+
+Ex: arrayName.pop()
+
+let products:string[] = ["Shoe", "Mobile", "TV", "Watch"];
+PrintList();
+console.log(`${products.pop()} removed [last item]`);
+PrintList();
+
+
+function PrintList() {
+   for (var property in products) {
+      console.log(`[${property}]-${products[property]}`);
+   }
+}
+
+O/P:
+[0]-Shoe
+[1]-Mobile
+[2]-TV
+[3]-Watch
+Watch removed [last item]
+[0]-Shoe
+[1]-Mobile
+[2]-TV
+
+Ex: shift()
+
+let products:string[] = ["Shoe", "Mobile", "TV", "Watch"];
+PrintList();
+console.log(`${products.shift()} removed [first item]`);
+PrintList();
+
+
+function PrintList() {
+   for (var property in products) {
+      console.log(`[${property}]-${products[property]}`);
+   }
+}
+
+O/P:
+[0]-Shoe
+[1]-Mobile
+[2]-TV
+[3]-Watch
+Shoe removed [first item]
+[0]-Mobile
+[1]-TV
+[2]-Watch
+
+
+Ex: splice()
+
+let products:string[] = ["Shoe", "Mobile", "TV", "Watch"];
+PrintList();
+console.log(`${products.splice(2,1)} removed [specified index]`);
+PrintList();
+
+
+function PrintList() {
+   for (var property in products) {
+      console.log(`[${property}]-${products[property]}`);
+   }
+}
+
+O/P:
+[0]-Shoe
+[1]-Mobile
+[2]-TV
+[3]-Watch
+TV removed [specified index]
+[0]-Shoe
+[1]-Mobile
+[2]-Watch
+
+5. Sorting Array Elements
+
+  Function		Description
+  --------------------------------------------------------------------------
+   sort()		Will sort in ascending order
+   reverse()	Will arrange the elements in
+		reverse order i.e from bottom to
+		top.
+
+Ex:
+let products:string[] = ["B", "C", "A", "D"];
+PrintList();
+console.log("Sorted List");
+products.sort();
+products.reverse();
+PrintList();
+function PrintList() {
+   for (var property in products) {
+      console.log(`[${property}]-${products[property]}`);
+   }
+}
+
+O/P:
+[0]-B
+[1]-C
+[2]-A
+[3]-D
+Sorted List
+[0]-D
+[1]-C
+[2]-B
+[3]-A
+
+6. Concat Array
+
+    concat is function which is used to combine array elements. You combine elements from multiple arrays and copy into a new array.
+
+EX:
+let south:string[] = ["Chennai", "Hyderabad"];
+let north:string[] = ["Delhi", "Mumbai"];
+let cities:string[] = south.concat(north);
+console.log(`Cities= ${cities.toString()}`);
+console.log(`North=${north.toString()}`);
+console.log(`South=${south.toString()}`);
+
+	           Object Type
+- In computer programming object is like an entity which comprises of data and logic.
+- Data is stored in Properties
+- Logic is defined with Functions.
+- TypeScript object comprises of Properties and Functions.
+- Typescript provides "object" as type for creating objects. How ever you can also use "any" as type for creating object.
+- The members in an object are encapsulated by using "{ }"
+
+      let  obj:object = {
+	                  property:data;
+		method:function(){ }
+	                }
+            obj.property;
+            obj.method();
+
+  "dot [.] is an member invoking operator"
+
+- The members of an object are accessible with in the object by using "this" keyword and out side the object by using object name.
+
+Ex:
+let product:object = {
+   Name:"Samsung TV",
+   Price: 45000.53,
+   Quantity: 2,
+   Total:function(){
+      return this.Quantity * this.Price;
+   },
+   PrintProduct:function() {
+      console.log(`Name=${this.Name}\nPrice=${this.Price}\nQuantity=${this.Quantity}\nTotal=${this.Total()}`);
+   }
+}
+console.log("---TV Details--");
+product.PrintProduct();
+console.log("---Shoe Details--");
+product.Name = "Nike Casuals";
+product.Price= 4000.44;
+product.Quantity = 2;
+product.PrintProduct();
+
+
+
+
+
