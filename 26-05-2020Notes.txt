@@ -1,0 +1,141 @@
+Non-Primitive Types:
+- Array
+- Object
+
+     	                Array of Objects
+- It is a collection of  objects.
+- It is the best way for presenting complex data.
+- Its format type is known as "JSON".
+  [JavaScript Object Notation]
+
+	[
+	 {  },
+	 {  },
+	 {  }
+	]
+
+- There is no specific datatype for Array of Objects i.e for JSON. you have to use "any" as type.
+
+Ex:
+let products:any[] = [
+   {Name: "Samsung TV", Price: 45000.32, Category:"Electronics"},
+   {Name: "Nike Casuals", Price: 2000.44, Category:"Footwear"},
+   {Name: "Lee Cooper Boot", Price: 1300.44, Category:"Footwear"}
+];
+for(var product of products) {
+   console.log(`${product.Name}-${product.Price}-${product.Category}`);
+}
+console.log(`Nike Casuals Cost : ${products[1].Price}`);
+
+Task-1:
+Create a program to print the details of all products that belong to "footwear" category.
+
+[
+     {Name: "Nike Sports Wear", Price: 7800.44, Category:"Footwear"},
+   {Name: "Samsung TV", Price: 45000.32, Category:"Electronics"},
+   {Name: "Nike Casuals", Price: 2000.44, Category:"Footwear"},
+   {Name: "Lee Cooper Boot", Price: 1300.44, Category:"Footwear"}
+]
+
+Task-2: 
+ Create a program to print all products in decending order of their Price.
+
+
+	          Date Type in TypeScript
+- There is no specific data type for Date values.
+- "any" is the type defined for storing date value.
+- The date value are stored in date type memory, which is allocated by using "Date()" constructor.
+- The date value in date() constructor will be in a string fromat.
+
+Syntax:
+let manufactured:any = new Date();
+
+- By default the current system date is loaded into date type memory.
+
+Ex:
+let productName:string = "Samsung TV";
+let productPrice:number = 45000.55;
+let manufactured:any = new Date();
+
+console.log(`Name=${productName}\nPrice=${productPrice}\nManufactured=${manufactured}`);
+
+- The new date is passed into "Date()" constructor in a string format using "yyyy-MM-dd"
+
+Syntax:
+let manufactured:any = new Date("2020-03-20");
+
+- You can read the date value from memory by using date functions. All date functions return a number.
+
+
+Function		Description
+===========================================
+getHours()	It returns the hour number in
+		24 hr format.
+getMinutes()	It returns the minutes number
+		0-59
+getSeconds()	It returns the seconds number
+		0-59
+getDay()		It returns the weekday number
+		0=sunday
+getDate()		It returns the date number
+		1-31
+getMonth()	It returns the month number
+		0=January
+getYear()		It returns year as per Y2K. It is
+		obsolete [no longer in use]. 
+getFullYear()	It returns year in full format.
+
+toDateString()
+toTimeString()
+toLocaleDateString()
+toLocaleTimeString()
+
+
+
+Ex:
+let productName:string = "Samsung TV";
+let productPrice:number = 45000.55;
+let manufactured:any = new Date("2020-03-20");
+let months:string[] = ["January","Feb","March","April","May"];
+let weekdays:string[] = ["Sun","Mon","Tue","Wed","Thu","Friday","Saturday"];
+
+console.log(`Name=${productName}\nPrice=${productPrice}\nManufactured Month=${months[manufactured.getMonth()]}\nManufactured WeekDay=${weekdays[manufactured.getDay()]}\nManufactured Year=${manufactured.getFullYear()}`);
+
+- TypeScript supports date functions to set a date value.	  
+
+Function		Description
+========================================
+setDate()		Set the day as a number
+setFullYear() 	Set the year
+setHours()	Set hour in 24 hr format
+		[0-23]
+setMilliseconds()	0-999
+setMinutes()	0-59
+setMonth()	0-11
+setSeconds()	0-59
+setTime()		
+
+Note: It allows from 1970 January 1
+
+Syntax:
+     
+let mfd:any = new Date();
+mfd.setDate(24);
+console.log(`Date=${mfd}`);
+
+Ex:
+let mfd:any = new Date();
+mfd.setFullYear(2020,2,10);
+console.log(`Date=${mfd}`);
+
+Task-3: Write program for salutation
+	- Good Morning
+	- Good Afternoon
+	- Good Evening
+
+
+	          Regular Expression Type
+
+
+
+
