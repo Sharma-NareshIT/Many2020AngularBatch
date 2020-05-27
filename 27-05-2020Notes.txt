@@ -1,0 +1,141 @@
+	        Regular Expression Type
+	        -------------------------------------
+- Regular expression is used to verify the format of value.
+- It uses a pattern that compares your value with any format and return boolean true or false.
+- Patterns are built by using 
+	a) Meta Characters
+	b) Quantifiers
+- Typescript doesn't have any specific datatype for storing a regular expression, you have to use "any" type.
+
+- Regular expression is a literal enclosed in " /  / "
+- A regular expression is verified by using "match()" function
+
+
+colou?r
+
+Meta Character	Description
+----------------------------------------------------------------------------------------
+?		Zero or One occurance
++		One or more occurances
+*		Zero or more occurances
+\		It is to define escaping entity
+\^		Starts with
+$		Ends with
+w		Alpha numeric with underscore 
+d		Only numeric
+s		It is to define blank spaces
+[A-Z]		Only uppercase letters allowed
+[a-z]		Only lowercase letters allowed
+[a-Z] or [A-Za-z]	Both upper and lower case allowed
+[a,d,s]		Only specified chars allowed
+[^a,d,s]		Excluding specified chars all others
+		allowed
+[0-9]		Only numeric allowed
+[a-zA-Z0-9_] or \w	Alpha numeric with underscore
+[a-mA-M4-9]	Any char with in specified range 
+\+ \- \$ \&		Individual special chars
+[!@#$%&]		All specified special chars
+(?=.*[A-Z])		At least one upper case letter required
+(?=.*[0-9])		At least one numeric value required
+(?=.*[!@#$%&])	At least one special char
+
+
+
+Quantifier		Description
+==============================================
+ {n}		Exactly n-number of chars
+ {n, m}		Minimum n and Maximum m
+ {n, }		Minimum n and Maximum any
+
+
+Ex:
+let spelling:string = "colouur";
+let regExp:any = /colou?r/;
+if(spelling.match(regExp)) {
+    console.log(`Your Spelling ${spelling} is Correct`);
+} else {
+    console.log(`Your Spelling ${spelling} is Incorrect-Try color / colour`);
+}
+
+Ex:
+let username:string = "JOHN";
+let usernameExp:any = /[A-Z]{4,10}/;
+
+let mobile:string = "+919876543210";
+let mobileExp:any = /\+91[0-9]{10}/;
+
+let password:string = "john123A";
+let passwordExp:any = /(?=.*[A-Z])\w{4,15}/;
+
+if(username.match(usernameExp)) {
+   if(password.match(passwordExp)){
+      if(mobile.match(mobileExp)) {
+         console.log(`Your Details : \n Name=${username}\nPassword=${password}\nMobile=${mobile}`);
+      } else {
+          console.error(`Error:Invalid Mobile`);
+      }
+   } else {
+       console.error(`Error: Password 4 to 15 char with atleast 1 uppercase letter required`);
+   }
+} else {
+    console.error(`Error: Name 4 to 10 Uppercase Only`);
+}
+
+Summary:
+Primitive Types
+1. number
+2. string
+3. boolean
+4. null
+5. undefined
+
+Non-Primitive Types
+1. Array
+2. Object
+3. Regular Expression
+4. Date
+
+Array Manipulations
+String Manipulations
+Number Manipulations
+
+	                  Math Object
+- It is a built-in object of JavaScript library available with TypeScript  also to handel manipulations on numeric values.
+	
+Method		Description
+============================
+abs()		Returns the absolute value
+acos()
+acosh()
+asin()
+atan()
+atan2()
+atanh()
+ceil()
+floor()
+round()
+random()
+log()
+max()
+min()
+pow()
+sqrt()
+PI
+
+Ex:
+function GenerateCode(){
+    let a:number  = Math.random() * 10;
+    let b:number  = Math.random() * 10;
+    let c:number  = Math.random() * 10;
+    let d:number  = Math.random() * 10;
+    let e:number  = Math.random() * 10;
+    return `${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)}`;
+}
+console.log(`Captcha : ${GenerateCode()}`);
+
+	              Operators, Statements, OOP
+
+
+
+
+
