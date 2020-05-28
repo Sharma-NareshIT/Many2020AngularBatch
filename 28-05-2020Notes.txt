@@ -1,0 +1,177 @@
+		   Operators
+- In computer programming operator is an object.
+- It contains data and logic
+- Data is stored in operands and logic is defined by using a symbol, which include special char or word.
+- It takes values from operands, preforms operation on values and return a value.
+	Syntax:
+	           operandLeft > operandRight
+
+- Based on How many operands an operator can handle they are classified into 
+	1. Unary Operator
+	      It performs operation using single operand
+	      ex:
+		x++
+		--x
+	2. Binary Operator
+	       It performs operation on 2 operands
+	    Ex:
+		x + y 
+		x > y
+
+	3. Ternary Operator
+	       It performs operation on 3 operands
+	
+	Ex:
+	       (condition)?true_Statement:false_statement
+
+- Based on the type of value returned by an operator they are classified into following types
+		      
+	 1. Arithematic Operators
+	 2. Logical / Relational Operators
+	 3. Assigment Operators
+	 4. Bitwise Operators
+	 5. Special Operators
+
+Arithematic Operators:
+========================================
++	Addition
+-	Subtraction
+*	Multiplication
+**	Exponentation - ES6  2**3  = 8  [ Math.pow(2,3) ]
+/	Division
+%	Modulus Division 
+++	Increment
+--	Decrement
+
+Assignment Operators
+===================
+=	Equal
++=	Add and Assign
+-=	Substract and Assign
+*=	Multiply and Assign
+/=	Divide and Assign
+%=	Modulus and Assign
+**=	Exponent and Assign
+
+Comparision Operators
+====================
+==	Equal
+===	Identical Equal
+!=	Not Equal
+!==	Not Indentical
+>	Greater
+<	Lessthan
+>=	Greater than or Equal
+<=	Less than or Equal
+
+	var x = true; 1
+	var y = true;  1
+
+	x + y ?    =  1+1 = 2
+
+	x:boolean = true;
+	y:boolean = false;
+
+	x + y ? =   /invalid operation
+
+Logical Operators
+&&	AND
+||	OR
+!	Logical NOT
+
+Bitwise Operators
+============================
+&	AND
+|	OR
+~	NOT
+^	XOR
+<< 	Zero Fill left shift
+>>  	Signed right shift
+>>>	Zero fill right shift
+
+
+		Special Operators
+
+1. typeof	: It is a special operator that return the datatype
+	  of value stored in any reference or variable.
+
+
+Ex:
+let product:any = {
+    Name: 'TV',
+    Price: 45000.55,
+    InStock: true,
+    Total: function() {
+    }
+}
+console.log(`Name is ${typeof product.Name}\n Price is ${typeof product.Price}\nInStock is ${typeof product.InStock}\nTotal is ${typeof product.Total}`);
+
+O/P:
+Name is string
+Price is number
+InStock is boolean
+Total is function
+
+	product = {
+	       Cities: ['Delhi', 'Hyd'],
+	       Mfd: new Date(),
+	       List: new Array(),
+	       regExp: /[A-Z]{10}/
+	}
+
+	typeof  product.Cities     ? object
+	typeof  product.Mfd	       ? object
+	typeof  product.List	       ? object
+	typeof  product.regExp   ? object
+
+2. instanceof  : It is a special operator that verifies whether the given reference is derived for specific object and returns true of false.
+
+Ex:
+class Employee {
+
+}
+let product:any = {
+    Name: 'TV',
+    Price: 45000.55,
+    InStock: true,
+    Cities: new Array(),
+    Total: function() {
+    }
+}
+let obj = new Employee();
+console.log(`Cities Dervied from Array : ${product.Cities instanceof Array}`);
+console.log(`Obj is Instance of Array : ${obj instanceof Array}`);
+console.log(`Obj is Instance of Employee : ${obj instanceof Employee}`);
+
+O/P:
+Cities Dervied from Array : true
+Obj is Instance of Array : false
+Obj is Instance of Employee : true
+
+3. delete  : It is a special operator is used to delete any 
+	 property from an object. You can't delete
+	 readonly properties. All built-in object properties
+	 are readonly.
+		delete Math.PI  // invalid
+		
+Ex:
+let product:any = {
+    Name: 'TV',
+    Price: 45000.55,
+    InStock: true,
+}
+delete product.Price;
+if(product.Price==undefined) {
+    console.log(`Name=${product.Name}`);
+} else {
+console.log(`Name=${product.Name}\nPrice=${product.Price}`);
+}
+
+	delete arrayName.length // invalid
+	delete Math.PI  // invalid
+
+
+
+
+
+
