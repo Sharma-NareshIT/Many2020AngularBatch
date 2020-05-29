@@ -1,0 +1,126 @@
+4. in operator: It is a special operator used to verify whether the given property is a member of specified object. It returns boolean true or false.
+
+
+ Syntax:
+	"PropertyName"  in ObjectName
+
+Ex:
+let product:any = {
+    Name: 'TV',
+    Price: 45000.55,
+    InStock: true,
+}
+console.log(`Is Qty a member of Product ? ${"Qty" in product}`);
+console.log(`Is Price a member of Product ? ${"Price" in product}`);
+
+Ex: You can use "in" operator with for statement to create an iterator for properties. So that you can read all properties of an object.
+	      
+let product:any = {
+    Name: 'TV',
+    Price: 45000.55,
+    InStock: true,
+}
+for(var property in product) {
+    console.log(`${property}:${product[property]}`);
+}
+
+5. of  operator:  It is a special operator, which can be used only over an iteration to read all values from a collection.
+
+Ex:
+let products:any[] = [
+    {
+        Name: 'TV',
+        Price: 45000.55,
+        InStock: true,
+    },
+    {
+        Name: "Mobile",
+        Price: 12000.33,
+        InStock:false
+    }
+];
+for(var value of products) {
+    console.log(value);
+}
+
+6. new operator: It is dynamic memory allocating operator.
+	           It allocates memory for any specific type	
+	           of object and loads its members into 
+	           memory.
+
+  Syntax:
+	let  mfd:any = new Date();
+                 let products:string[] = new Array();
+
+	
+	              TypeScript Statements
+	              ===================
+- Statement is a program instruction used to control the execution flow.
+- Statements are classified into following types
+
+
+Category			Keywords
+--------------------------------------------------------------------------------------
+Selection Statements	if, else, switch, case, default
+Iteration and Looping	for, while, do while
+Jump Statements		break, continue, return
+Exception Handling		try, catch, throw, finally
+
+
+Selection Statements
+a) Forward Jump	     if(condition){ }
+b) Single Condition       if() { } else { }
+c) Multiple Conditions  if() { } else if () { } else { }
+d) Multi Level Conditions  if(){ if() { }else{} } else { }
+e) Switch Selection
+
+ 	             What is a switch?
+In electronics switch is used to interrupt the flow of electrons.
+There are various types of switches 
+	a) Toggle switch
+	b) Push button
+	c) JoyStick switch
+	d) Selector Switch
+
+Iteration and Looping :
+
+Iterator is a software design pattern used to read elements from a collection in sequential order. It is under "Software Behavioral Patterns". It is a communication pattern.
+Ex:
+	for..in,  for..of
+
+Looping is the process of executing a set of statements repetedly until the given condition is satisfied.
+
+Ex:   for(), while, do while
+
+What is Recursion?
+- It is a technique where a function call is defined with in the context of same function.
+- It executes the same function repeatedly until the condition satisfied.
+- It is without loop or iteration.
+
+Ex:
+function factorial(n:number){ 
+   if(n<=0) {
+       return 1;
+   } else {
+       return n * (factorial(n-1));
+   }
+}
+console.log(`Factorial of 5 is ${factorial(7)}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
