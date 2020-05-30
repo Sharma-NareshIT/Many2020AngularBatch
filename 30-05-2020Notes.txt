@@ -1,0 +1,119 @@
+		OOP in TypeScript
+
+- The programming Systems used in real-world application development are classified into 3 major types
+	1. POPS
+	2. OBPS
+	3. OOPS
+
+POPS
+- Process Oriented Programming System
+- It supports low level features
+- It can directly interact with hardware services
+- It uses very less memory
+- It is faster in handling communication
+- Applications can run on low memory devices.
+	ex: C, Pascal, COBOL
+Issues
+- Code reusability
+- Code separation
+- Extensibility
+- Dynamic memory allocations
+
+OBPS:
+- Object Based Programming System
+- It supports code reusability, pseudo extensibility, code separation, dynamic memory allocations.
+
+	Ex: JavaScript, Visual Basic [not .net]
+Issues:	
+- No Inheritence
+- No dymanic polymorphism
+- No code level security 
+
+OOPS:
+- Object Oriented Programming System
+- Support code reusability, extensibility, code separation, dynamic memory, code level security, dynamic polymorphism.
+	Ex: JAVA, .NET Languages, C++
+
+Issues
+- It can't directly interact with hardware services
+- It uses more memory
+- It is complex in configuration
+- It is slow in handling interactions
+
+History of OOP:
+- Object was introduced in early 1960 by "Alan Kay".
+- OOP was initiated in 1967 by 
+	"Johan Olay & Kristian Nygaard"
+- SIMULA is the first OOP
+- It introduces code re-usability
+- In 1970's "Trygve" introduced a framework called "MVC" [Model View Controller], which provides code separation. It was formulated with "Small Talk".
+- 1970 C++
+- 1990 Java 
+- 2003 .NET Languages etc.
+
+Features of OOPS:
+- Code Reusability
+- Code Separation
+- Code Extensibility
+- Loosely Coupled
+- Code Level Security
+
+Characterstics of OOPS:
+1. Object
+2. Class
+3. Contracts
+4. Templates
+5. Inheritence
+6. Polymorphism
+7. Abstraction
+8. Encapsulation
+
+
+	                  Contracts in OOP
+- You can't design any component for your application without any contract.
+- Contract comprises of RULES for designing a component.
+- In OOP languages the contracts for designing any component is defined by using "Interface".
+- By default every rule defined in contract must be implemented.
+- However a contract may also contain optional rules.
+- Interface in TypeScript is defined by using the keyword "interface"
+	   Syntax:
+	  	interface Name {
+
+		}
+- Contract [interface] contains set of rules.
+- Contract can contain only declaration of rules not their definition.
+	     Name:string = "TV"; // invalid rule
+	     Name:string;
+	     Print():void { };         // invalid rule
+	     Print():void;	     // valid rule
+- Contract members are by default public in access.
+- Contract members can't be restricted in acess. Hence they will not have access modifiers [public, private, protected].
+
+	interface  IName {
+	      private Name:string;  // invalid
+			           modifier not allowed
+	}
+
+Syntax:
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+    Qty:number;
+}
+let product:IProduct = {
+    Name: "TV",
+    Price: 56000.53,
+    InStock: true,
+    Qty:2
+}
+
+
+
+
+
+
+
+
+
+
