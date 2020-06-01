@@ -1,0 +1,163 @@
+		Contracts
+- Every rule defined in contract is mandatory to implement.
+		Optional Rules
+		=============
+   *A contract can have optional rules.
+   *Rules which can be ignored.
+   *Optional rules in a contract are defined by using a 
+    null reference character "?"
+
+Syntax:
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+    Qty:number;
+}
+let product:IProduct = {          // Error: Qty not defined
+    Name: "TV",
+    Price: 56000.53,
+    InStock: true,
+}
+
+Syntax : Make Qty as Optional
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+    Qty?:number;
+}
+let product:IProduct = {
+    Name: "TV",
+    Price: 56000.53,
+    InStock: true,
+}
+
+Q: Why a contract need optional rules?
+A: Optional rules are used to define the Goal of Module
+     Mandatory rules are used to define the Objective of Module.
+
+Q: What is difference between Goal and Objective?
+A. Objective must be achievable and it is always timebound.
+     Goal may or many not be achievable. No timebound.
+
+  IRCTC - Availability of Trains and Reservation - Objective
+              - Showing live status of Train - Goal
+	
+		Contract Functions
+		=============== 
+- A function defines the logic for component.
+- It specifies the functionality.
+- Contract function can have only signature or declaration.
+- Contract functions can't have definition.
+	         interface Name {
+	             Total():number;
+	             Print():void;
+	         }
+- The contract functions are implemented in any component by using "function()" constructor. [Object Based Approach]
+
+                   Total : function() {
+	        return  numericValue;
+	  }
+- The contract function are directly implemented in any component without function() constructor. [OOP Approach]
+	
+	Total():number {
+	      return numericValue;
+	 }
+
+Ex:
+interface IProduct {
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+let product:IProduct = {
+    Name: "TV",
+    Price: 34000.44,
+    Qty:2,
+    Total():number {
+        return this.Qty * this.Price;
+    },
+    Print():void {
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+    }
+}
+product.Print();
+
+- Contract functions can be optional.
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total?():number;
+    Print?():void;
+}
+
+	      Indexable Types in Contract
+	      =======================
+- The properties that you define in contract are accessible by using an index reference.
+- Indexable reference types are used to creating "Key/Value" collection.
+- You can access the values with reference of keys.
+- A contract property can contain Key and Value reference.
+- The contract type that contains key value reference is known as Indexable type.
+
+Syntax:
+	interface    InterfaceName {
+	   [property:any]: valueType;
+	}
+
+Ex:
+interface CustomCollection {
+    [index:number]:string;
+}
+let Products: CustomCollection;
+Products = ["Samsung TV", "Nike Casuals"];
+console.log(`TV=${Products[0]}\nShoe=${Products[1]}`);
+
+		
+	           Extending Contracts
+	           =================
+- OOP Support loosely coupled and extensible architecture.
+- You can extend the functionality of contract without disturbing the existing contract.
+- A contract can be extended in serveral hierarchies
+	 a) Single 
+	 b) Multiple
+	 c) Multi Level
+
+- A contract can extend another contract by using "extends" keyword.
+	interface Contract1 {
+
+	}
+	interface Contract2 extends Contract1 {
+
+	}
+
+Ex:  Multi Level Extensibility
+
+interface IVersion1 {
+    NullReferenceChar:string;
+}
+interface IVersion2 extends IVersion1 {
+    RestParameters:string;
+}
+interface IVersion3 extends IVersion2 {
+    Print():void;
+}
+
+let TypeScript: IVersion3 = {
+    NullReferenceChar: `New Null Reference Character ? is added`,
+    RestParameters: `New Rest Parameter [...] added into TypeScript`,
+    Print():void {
+        console.log(`TypeScript New Features\n ${this.NullReferenceChar}\n${this.RestParameters}`);
+    }
+}
+TypeScript.Print();
+
+
+
+
+
