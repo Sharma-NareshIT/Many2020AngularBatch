@@ -1,0 +1,147 @@
+Extending Contracts:
+1. Single
+	A contract will extend on One Contract.
+
+	Syntax:
+	 interface One {
+	 }
+	 interface Two extends One {
+	 }
+
+2. Multi Level
+                 A contract is extended by another contract, which can be later extended by another contract exhibiting a Multi Level hierarchy.
+	Multi Level carries out an relationship between all contracts.
+
+	Syntax:
+	interface one {
+	}
+	interface Two extends One {
+	}
+	interface Three extends Two {
+	}
+
+Ex:
+interface IVersion1 {
+    NullReferenceChar:string;
+}
+interface IVersion2 extends IVersion1 {
+    RestParameters:string;
+}
+interface IVersion3 extends IVersion2 {
+    Print():void;
+}
+
+let TypeScript: IVersion3 = {
+    NullReferenceChar: `New Null Reference Character ? is added`,
+    RestParameters: `New Rest Parameter [...] added into TypeScript`,
+    Print():void {
+        console.log(`TypeScript New Features\n ${this.NullReferenceChar}\n${this.RestParameters}`);
+    }
+}
+TypeScript.Print();
+
+3. Multiple 
+	A contract can extend multiple contracts simultaneous at the same time. It doesn't define any relation between contracts. But allows to implement all contract through a single component.
+
+Syntax:
+	interface one { 
+	}
+	interface two {
+	}
+	interface final extends one , two {
+	}
+
+Ex:
+interface IVersion1 {
+    NullReferenceChar:string;
+}
+interface IVersion2 {
+    RestParameters:string;
+}
+interface Angular extends IVersion1, IVersion2 {
+    Version:string;
+    Print():void;
+}
+let angular : Angular = {
+    NullReferenceChar: "New Null Reference Character [?]",
+    RestParameters: "New Rest Paramters that allow multiple Values",
+    Version: "Angular-9",
+    Print():void {
+        console.log(`${this.NullReferenceChar}\n ${this.RestParameters} \n ${this.Version}`);
+    }
+}
+angular.Print();
+
+	       Modular System for Contracts
+	       =========================
+- Modular system allows the contracts to be defined in such a way that they are accessible across multiple applications.
+- You can reuse the contract across multiple applications.
+- Modular system allows to cleanly seperate the contracts and inject them into any application or component.
+- JavaScript uses explicit modular systems called 
+	CommonJS
+	AMD system [Asynchronous Module Distribution]
+- TypeScript implicitly uses them
+
+- Any contract defined in a "ts" is not accesible to other file. You have to mark them as "export" in order to configure as Global module.
+
+- Contracts are imported into your component. You have to use "import" statement.
+
+Ex:
+1. Add 2 folders into your project
+	a) Contracts
+	b) Components
+2. Goto Contracts folder and add following files
+
+	        ICategoryContract.ts
+
+     export interface ICategoryContract {
+                CategoryName:string;
+      }
+	         IProductContract.ts
+      export interface IProductContract {
+   	 Name:string;
+    	Price:number;
+    	Print():void;
+       }
+
+3. Goto Component folder and add a new file
+	       "App.ts"
+
+import { IProductContract } from '../Contracts/IProductContract';
+
+import { ICategoryContract } from '../Contracts/ICategoryContract';
+
+let product:ICategoryContract | IProductContract = {
+    Name: "Samsung TV",
+    Price: 43500.55,
+    CategoryName: "Electronics",
+    Print():void {
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nCategory=${this.CategoryName}`);
+    }
+}
+product.Print();
+
+4. Compile App.ts
+	> tsc app.ts
+	> node app.js
+
+
+Note: You can define multiple contracts in a Module and import into any App.
+
+Syntax:
+		AllContract.ts
+export interface Contract1 {
+
+}
+export interface Contract2 {
+
+}
+export interface Contract3 {
+    
+}
+	            App.ts
+import { Contract1, Contract2, Contract3 } from '../Contracts/AllContracts';
+
+Note: It is not mandatory to inject all contracts from a module.
+
+	                  Classes
