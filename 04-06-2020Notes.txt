@@ -1,0 +1,54 @@
+		 Class in OOP
+
+What is a Class in OOP?
+
+- In computer programming [OOP], a class is an extensible program-code-template for creating objects.
+- It comprises of data and logic required for an Object.
+- Class is reffered as a Model when it have to represent the data we are working with.
+- Class is reffered as an Entity when it have to represent the business and using business objects [with ORM - Object Relational Mapper].
+- Class is reffered as a Blue Print when it have to represent set of all members used for object.
+- Class provides a set of members, which includes constructor, properties and methods.
+
+- The members of class can be Static and Non-Static.
+
+	  
+Static
+- It refers to "Continious Memory"
+- The memory allocated for first object will continue for others.
+- It uses more memory.
+- It is not secured
+- But it can save round trips
+- It is faster 
+- Static members are defined by using "static" keyword
+- Static members are accessible with-in the class or outside the class by using class name.
+
+Dynamic [Non-Static]
+- It refers to "Discrete Memory"
+- It is disconnected memory.
+- Memory is newly allocated for every object
+- It is more secured than static.
+- It uses lot of round-trips
+- It is slow.                 
+- Dynamic or non-static members are the default type for members in a class.
+- Non-static members are acessible with in the class by using "this" keyword and outside the class by using an instance of class.
+
+Ex:
+class Demo {
+    static s=0;
+    n=0;
+    constructor(){
+        Demo.s = Demo.s + 1;
+        this.n = this.n + 1;
+    }
+    Print() {
+        console.log(`s=${Demo.s} n=${this.n}`);
+    }
+}
+let obj1 = new Demo();
+obj1.Print();
+let obj2 = new Demo();
+obj2.Print();
+let obj3 = new Demo();
+obj3.Print();
+
+
