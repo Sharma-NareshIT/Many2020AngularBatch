@@ -1,0 +1,103 @@
+Static and Non-Static Members
+		Access Modifiers
+- Access modifier defines the accessibility for any member in a class.
+- It handles both read and write operations.
+- TypeScript class member can be defined with
+	a) public
+	b) private
+	c) protected
+
+Access modifier	Description
+==================================================
+public 		It marks the member as public in 		access.
+		It is accessible with in the class.
+		It is accessible by using superclass 		object.
+		It is also accessible by using derived
+		class object.
+
+private		It marks the member as private in
+		access.
+		It is accessible with in the class.
+		It is not accessible by using the class
+		object or its derived class object.
+
+protected		It marks the member as protected in
+		access.
+
+		The super class protects its 				implementation so that it can be
+		accessed only with in the class and
+		by using only derived class object witin
+		the derived class.
+
+		The protected members are not 
+		accessible from super class object.
+
+		
+
+Ex:
+class superclass {
+    public Name:string = "Samsung TV";
+    private Price:number = 34000.44;
+    protected Quantity:number= 2;
+}
+class derviedclass extends superclass {
+    Print(superobj:superclass, derivedobj:derviedclass){
+        superobj.Name = "Samsung TV";	// public
+        derivedobj.Name = "Nike Casuals";	// public
+        derivedobj.Quantity= 3;		// protected
+    }
+}		
+
+Note: Protected members are marked for Implementation.
+          Implementation can be done only from extented class.
+          Hence protected member is accessible only from
+          extended class by using extended class object.
+
+
+Access Specifier:
+- It defines the accessibility that restricts to only read and not to write.
+- "readonly" is an access specifier typescript.
+- You can define readonly access specified for a member in contract [interface] or in template[class].
+- Access modifiers are not allowed in interface.
+
+Ex:
+interface IProduct {
+    readonly Name:string;
+    Price:number;
+}
+let product:IProduct = {
+    Name: "TV",
+    Price: 34000.42
+};
+product.Name = "Samsung TV";  // invalid - it is read-only
+product.Price = 46000.66;
+
+	          Structure of TypeScript Class
+- Typically a typescript class comprises of following members.
+	a) Properties
+	b) Functions/Methods
+	c) Accessors
+	d) Constructor
+
+Syntax:
+	class ClassName
+	{
+	     //properties;
+	    // functions;
+                     // accessors;
+                     // constructor;
+	}
+
+	            Constructor in a Class
+- Constructor is a function.
+- Constructor is an anonymous function.
+- Anonymous function will not have a name.
+- It is a function that executes automantically.
+- A constructor is required for a class in order to initialize memory and define task on initialization.
+
+
+
+
+
+
+
