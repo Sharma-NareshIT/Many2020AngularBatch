@@ -1,0 +1,92 @@
+		Class Members
+Constructor:
+- It is a special type of function in a class that executes automantically.
+- It is an anonymous type.
+- It will not have an explicit name.
+- The class name is impliclity used for constructor. 
+- A constructor function is created by using "constructor" keyword.
+- It is mostly used to initiate memory in order to handle any specific operation when class is loaded into memory.
+- Constructor is accessed only once per an object.
+- Constructor is the first function in a class to be called when class is loaded into memory.
+- You don't need to define the constructor while allocating memory for class.
+
+	let obj = new className;	
+	// OK when constructor of class is parameterless.
+				 
+	let obj = new className();	// not-necessary
+
+Ex:
+class Database {
+    constructor(){
+        console.log("Connected to Database..");
+    }
+    public Insert() {
+        console.log("Record Inserted..");
+    }
+}
+let oracle = new Database;
+oracle.Insert();
+
+	      Parameterized Constructor
+- Parameters are used to modify the functionality. So that it can do similar type of work but can change according to state.
+- Every parameter defined in constructor is by defualt mandatory.
+- The values are passed into constructor while allocating memory for class.
+
+Ex:
+class Database {
+    constructor(dbname:string){
+        console.log(`Connected to ${dbname} Database..`);
+    }
+    public Insert() {
+        console.log("Record Inserted..");
+    }
+}
+let oracle = new Database("Oracle");
+oracle.Insert();
+let mysql = new Database("MySql");
+mysql.Insert();
+
+- A Constructor can be defined with optional parameters
+	"? - null reference character"
+Ex:
+class Database {
+    constructor(dbname?:string){
+        if(dbname==undefined) {
+            console.log(`Connected to UnKnown Database`);
+        } else {
+        console.log(`Connected to ${dbname} Database..`);
+        }
+    }
+    public Insert() {
+        console.log("Record Inserted..");
+    }
+}
+let oracle = new Database("Oracle");
+oracle.Insert();
+let mysql = new Database("MySql");
+mysql.Insert();
+let mongo = new Database;
+mongo.Insert();
+
+Note: Without calling super class constructor you can't call the derived class constructor. A derived class constructor must have a call for super class constructor.
+
+Ex:
+class superclass {
+   constructor() {
+       console.log("Super Class Constructor");
+   }
+}
+class derivedclass extends superclass {
+    constructor(){
+        super();	// super class constructor.
+        console.log("Derived class Constructor");
+    }
+}
+let obj = new derivedclass();
+
+- Constructor can be defined with access modifiers like
+	public, private, protected
+
+Properties, accessors, functions
+
+
