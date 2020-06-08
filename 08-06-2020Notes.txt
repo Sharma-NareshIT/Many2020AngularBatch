@@ -1,0 +1,93 @@
+		Properties
+		========
+	var x = 10;
+	public x = 10;
+
+Variable is a name given to storage location.
+Variables can't have a user defined authorization.
+They don't have restriction other than scope.
+Variables are directly access by memory reference.
+
+Property is a named member of class.
+The memory is allocated when the class is loaded into memory.
+Property can have restricted access.
+Property is accessible by using accessors which allow to set and get value.
+Data is stored in properties
+
+Syntax:
+	class  className {	
+	   public propertyName = value;	
+	}
+
+
+		Accessors
+		=========
+- TypeScript supports getters / setters as a way of intercepting access to a member of an object.
+
+- Accessors will give fine grained control over how a member is access.
+
+- It can provide an authorized access to properties.
+
+- TypeScript accessors are defined by using
+	get() 
+	set()
+Syntax:
+  get  accessorName() {
+        return propertyValue;
+  }
+
+ set accessorName(val) {
+          this.property = val;
+  }
+
+Ex:
+let password:string = "admin123";
+class Product {
+    private _productName:string;
+
+    get ProductName():string {
+        return this._productName;
+    }
+
+    set ProductName(newName:string) {
+        if(password && password=="admin123")
+        {
+        this._productName = newName;
+        } else {
+            console.log("Error: You are Not Authorized to Set Product Name");
+        }
+    }
+}
+let tv = new Product();
+tv.ProductName = "Samsung TV";
+if(tv.ProductName) {
+    console.log(`Name=${tv.ProductName}`);
+}
+
+		Functions in a Class
+		=================
+- A function is always intended to return value.
+- A method will not return a value.
+- A Procedure may or may not return a value.
+- Function outside a class is defined by using "function" keyword.
+	function name(): returnType {
+
+                 }
+- Function inside the class is defined by using access modifier.
+	public  name(): returnType {
+
+	 }
+
+
+Ex:
+function hello():void {
+    console.log("Hello ! TypeScript");
+}
+class Demo {
+    public Print():void {
+        hello();
+    }
+}
+let obj = new Demo();
+obj.Print();
+hello();
