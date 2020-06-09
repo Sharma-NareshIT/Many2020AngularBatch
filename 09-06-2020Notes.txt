@@ -1,0 +1,51 @@
+Configuring a Function or Method:
+- Function Configuration comprises of
+	a) Declaration
+	b) Signature
+	c) Definition
+	d) Return Type
+- Declaration specifies its accessbility and scope.
+- Signature defines how it is accessed or used.
+- Definition specifies the functionality.
+- Return Type defines the behaviour of function definition. It defines the ability of function. If void then it doesn't  have the ability to return anything.
+
+
+
+     public Print():void 
+     {
+        console.log("Print Method");
+     }
+
+    public Print() → Declaration
+               Print() → Signature
+               :void   → Return type
+              {  }        → Definition
+
+ Function Return Types:
+ - void   : It is used to define an ability to function so that
+	it can't return a value. But it can perform the
+	specified functionality.
+
+    public  Print():void 
+    {
+
+    }
+
+   Syntax:
+     <a href="javascript:void(0)">Home</a>
+     <a href="javascript:alert('Hello !')">Home</a>
+
+FAQ: Can a function with void return type use the keyword "return" in definition?
+A. Yes.  "return" defined unreachable code
+
+          Can a complier compile the code defined after return?
+A. Yes. It can compile but it will not be available for function to use it.
+
+ - number, string, boolean?
+
+    Math.Sqrt(2)
+
+
+
+
+
