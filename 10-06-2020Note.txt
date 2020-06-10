@@ -1,0 +1,152 @@
+	Function with Return Type:
+	========================
+- A function is defined with return type in order to handle any expression and evaluate a value.
+- Functions which are intended to return a value after evaluating any expression are defined with return type.
+- Functions will have strongly typed return type defined.
+
+
+EX:
+function Captcha():string {
+    let a:number = Math.random() * 10;
+    let b:number = Math.random() * 10;
+    let c:number = Math.random() * 10;
+    let d:number = Math.random() * 10;
+    let e:number = Math.random() * 10;
+    let code:string = `${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)}`;
+    return code;
+}
+class Demo {
+    public Print():void {
+        console.log(`Verify Code : ${Captcha()}`);
+    }
+}
+let obj = new Demo();
+obj.Print();
+obj.Print();
+obj.Print();
+
+Q: Can a function be defined with more than one return type?
+Q: Can a function return more than one type of value.
+A. Yes. By using union of Types.
+
+Ex:
+function Status():string|number {
+    let page:string = 'about.html';
+    if(page=='home.html') {
+        return `You requested ${page} - Response OK`;
+    } else {
+        return 404;
+    }
+}
+console.log(Status());
+
+
+		Function Parameters
+- A function can be parameter less or parameterized.
+- A parameterized function allows to extend or modify the functionality.
+- Every parameter defined in a function is by default mandatory.
+- However you can configure nullable (optional) parameters.
+- Parameters register a location in memory to store the arguments. i.e the values passed as arguments.
+- The parameters defined in function signature are known as
+	"Formal Paramaters"
+- The parameters defined in function call are knows as "Actual Parameters[values]".
+
+
+ Syntax:
+	function Print(msg)   → msg Formal Parameter
+	{
+	}
+	Print("Welcome");  → Actual Value [Param]
+
+- Formal parameter have order dependency. i.e we have to pass the parameter in the same preciding order as they are defined in function.
+
+Ex:
+function PrintProduct(name?:string, price:number):void {
+  console.log(`Name=${name}\nPrice=${price}`);
+}
+
+PrintProduct("TV");       // price not defined - invalid
+PrintProduct(45000);     // invalid
+PrintProduct(undefined, 45000);
+
+Note: A required parameter can't be defined after an optional parameter in function signature.
+
+       Print(name?:string, price:number) { }    // invalid
+       Print(name:string, price?:number) {}     // valid
+
+- If any parameter is optional then you have handle it by using "undefined" type.
+
+EX:
+function PrintProduct(name?:string, price?:number):void {
+    if(name==undefined) {
+        console.log(`Price=${price}`);
+    } else {
+    console.log(`Name=${name}\nPrice=${price}`);
+    }
+}
+PrintProduct(undefined,40500.44);
+
+- The parameters defined in a function can be Primitive or NonPrimitive type.
+
+Array Parameters:
+- A function can have array type parameters to handle multiple values.
+
+Ex:
+function PrintList(list:string[]) {
+    for(var item of list) {
+        console.log(item);
+    }
+}
+PrintList(["T-Shirt","Jeans"]);
+PrintList(new Array("Nike Casuals","Lee Cooper Boot"));
+let electronics = ["TV", "Mobile"];
+PrintList(electronics);
+
+- A function can be defined with multiple array type params.
+- An array type parameter can be along with other type of  params.
+- There is no order dependency.
+
+
+Ex:
+function PrintList(list:string[], count:number) {
+    for(var item of list) {
+        console.log(item);
+    }
+    console.log(`Total Count: ${count}`)
+}
+PrintList(["T-Shirt","Jeans"], 2);
+PrintList(new Array("Nike Casuals","Lee Cooper Boot"), 2);
+let electronics = ["TV", "Mobile"];
+PrintList(electronics, electronics.length);
+
+- ES5 Introduced "Rest" parameters
+- A single rest parameter can allow multiple arguments.
+- Rest Parameter is defined by using "..."
+- Every function can have only one Rest parameter.
+- Rest parameter must be the last parameter in formal parameters list.
+
+Ex:
+function PrintList(...list:string[]) {
+    for(var item of list) {
+        console.log(item);
+    }
+} 
+PrintList("TV", "Mobile", "Shoe", "Watch");
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
