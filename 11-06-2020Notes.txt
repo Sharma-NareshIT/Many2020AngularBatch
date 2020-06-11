@@ -1,0 +1,78 @@
+		Function Recursion
+		=================
+- Recursion is a technique where a function call happens with in the context. 
+- It allows a function to handle loop.
+
+Ex:
+function fact(n:number):number {
+     if(n<=0) {
+         return 1;
+     } else {
+         return n * (fact(n-1));
+     }
+}
+console.log(`Factorial=${fact(5)}`);
+
+		Anonymous Function
+		==================
+- A function defined without a name is know as Anonymous function.
+- Anonymous functions are used for implementing call back.
+
+Ex:
+let password:string = "admin123";
+let VerifyPassword:any = [function(){},function(){}];
+VerifyPassword[0] = function(){
+    console.log("Password Verified..");
+}
+VerifyPassword[1] = function() {
+    console.log("Invalid Password..");
+}
+function OverloadedFunction(success, failure) {
+    if(password=="admin12") {
+        success();
+    } else {
+        failure();
+    }
+}
+OverloadedFunction(VerifyPassword[0],VerifyPassword[1]);
+
+Ex:
+let functions =[
+    function(){
+        return "Success.."
+    },
+    function(){
+        return "Failed..";
+    }
+];
+var [successfunction, failurefunction] = functions;
+
+function VerifyPassword(pwd, success, failure) {
+   if(pwd=="admin123") {
+       console.log(success());
+   } else {
+       console.log(failure());
+   }
+}
+
+VerifyPassword("admin12",successfunction, failurefunction);
+	           (or)
+VerifyPassword("admin123",function(){return "Password Verified"}, function(){return "Invalid Password"});
+
+- You can call an anonymous function directly by using "()" immediately after function definition. But it requires a function to be defined in "( )".
+
+Ex:
+(function(){
+    console.log("Hello TypeScript");
+})();
+
+- You can configure a memory reference for function.
+
+var hello = function() {
+    console.log("Hello TypeScript");
+}
+hello();
+
+
+
+
