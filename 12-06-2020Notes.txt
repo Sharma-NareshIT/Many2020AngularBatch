@@ -1,0 +1,137 @@
+	 Lambda Notation for Functions
+	 ==========================
+- It allows a developer to minify any function.
+- Minification is a technique of writing lengthy code in a short format.
+
+	( )  	→ function parameter less
+	(param)	→ function parameterized
+	=>	→ value/functionality to return
+	{ }	→ logic to execute
+
+   var hello = (param)=>{ statement1; statement2 };
+   var hello = (param)=> statement;
+
+
+EX:
+var hello = function(name:string) {
+    return `Hello ! ${name}`;
+}
+var welcome = (msg:string)=>`${msg}`;
+var Print = ()=>console.log("This is print function");
+var Addition = ()=> {let x=10; let y=20; console.log(`Addition=${x+y}`)};
+
+console.log(hello("John"));
+console.log(welcome("Welcome to TypeScript"));
+Print();
+Addition();
+
+Ex: Without Lambda Notation filtering products
+
+let products:any = [
+    {Name: "TV", Price: 45000.44, Category: "Electronics"},
+    {Name: "Earpods", Price: 15000.44, Category: "Electronics"},
+    {Name: "Nike Casuals", Price: 7000.44, Category: "Footwear"},
+    {Name: "Lee Cooper Boot", Price: 5000.44, Category: "Footwear"},
+    {Name: "Jeans", Price: 1000.44, Category: "Fashion"},      
+];
+let categoryName:string = "Fashion";
+let searchResults:any[] = products.filter(function(product){
+    return product.Category==categoryName;
+});
+console.log(`Results for ${categoryName}:`);
+for(var item of searchResults) {
+    console.log(`${item.Name} - ${item.Price}`);
+}
+
+Ex: With Lambda Notation
+
+let products:any = [
+    {Name: "TV", Price: 45000.44, Category: "Electronics"},
+    {Name: "Earpods", Price: 15000.44, Category: "Electronics"},
+    {Name: "Nike Casuals", Price: 7000.44, Category: "Footwear"},
+    {Name: "Lee Cooper Boot", Price: 5000.44, Category: "Footwear"},
+    {Name: "Jeans", Price: 1000.44, Category: "Fashion"},      
+];
+let categoryName:string = "Mobiles";
+let count:number = products.filter(x=>x.Category==categoryName).length;
+
+if(count==0) {
+  console.log(`No Products Found for ${categoryName}`);
+} else {
+let searchResults:any[] = products.filter(product=>product.Category==categoryName);
+console.log(`Results for ${categoryName} [${count}]:`);
+for(var item of searchResults) {
+    console.log(`${item.Name} - ${item.Price}`);
+  }
+}
+
+	              Code Reusability
+	             ===============
+- It is one of the key feature of OOP.
+- It allows to access and re-use the code of one component in another.
+- In OOP code reusability can be acheived by using
+	a) Aggregation
+	b) Inheritence
+
+Aggregation: 
+
+- It is a technique to re-use the code of one component in another component with out defining any relation between components.
+
+- This type of approach is often reffered as "Has-A-Relation"
+
+- It can be handled by using Object-to-Object communicaiton.
+
+
+Ex:
+class SuperClass 
+{
+    public Print():void {
+        console.log("Super Class Print Method.");
+    }
+}
+class DerivedClass
+{
+    public Print():void {
+        let obj = new SuperClass();
+        obj.Print();
+        console.log("Dervied class Print Function.");
+    }
+}
+let obj = new DerivedClass();
+obj.Print();
+
+Inheritence:
+ 
+- It is a technique to re-use the code of one component in another component  by defining relation between components.
+
+- Relation is often reffered as "Is-A-Relation"
+
+- A class can define relation with another class in order to access its members by using "extends".
+
+- A derived class can extend the super class so that super class members can be directly accessed in derived class by using "super" keyword.
+
+- A derived class constructor must have a super call.
+
+Ex:
+class SuperClass 
+{
+    constructor(){
+        console.log("Super class Constructor.");
+    }
+    public Print():void {
+        console.log("Super Class Print Method.");
+    }
+}
+class DerivedClass extends SuperClass
+{
+    constructor(){
+        super();
+        console.log("Derived Class Constructor");
+    }
+    public Print():void {
+        super.Print();
+        console.log("Dervied class Print Function.");
+    }
+}
+let obj = new DerivedClass();
+obj.Print();
