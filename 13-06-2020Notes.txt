@@ -1,0 +1,98 @@
+Class Supports 
+	
+1. Single Inheritence
+   A derived class can extend single super class.
+
+	class SuperClass {
+	}
+	class Derived extends SuperClass {
+	}
+
+2. Multi Level Inheritence
+    A derived class can be extended.
+
+	class SuperClass {
+	}
+	class Derived1 extends SuperClass {
+	}
+	class Derived2 extends Derived1 {
+	}
+
+Note: Multiple Inheritence is not supported for classes.
+          Multiple Inheritence is a single dervied class can extend multiple superclasses.
+
+          Class Super1 { }
+          Class Super2 { }
+          Class Derived extends Super1, Super2   → // invalid
+          {
+          }
+
+FAQ: Why Multiple Inheritence is not supported for classes?
+A:  It is due to Dead Locks of Constructor.
+      If there are multiple super classes the they have a conflict to load constructor into memory. Hence all constructors wait of each other to load into memory, which leads to deadlocks.
+      Multiple Inheritence is supported for interfaces as they don't have constructor.
+
+	              Polymorphism
+- It a technique used to define multiple behaviors to a single component.
+- At various instances a component can perform different tasks.
+- In OOP a component can have multiple behaviors if it is defined with different types of memory.
+- A Single component can use the memory of multiple components.
+- A single base class object can use the memory of multiple dervied classes.
+
+
+Ex:
+class Employee {
+    public firstName:string;
+    public lastName:string;
+    public designation:string;
+    public Print():void {
+        console.log(`${this.firstName} ${this.lastName} - ${this.designation}`)
+    }
+}
+class Developer extends Employee {
+    public Print():void  {
+        super.firstName = "Raj";
+        super.lastName = "Kumar";
+        super.designation = "Developer";
+        super.Print();
+    }
+}
+class Admin extends Employee {
+    public Print():void  {
+        super.firstName = "Kiran";
+        super.lastName = "Kumar";
+        super.designation = "Admin";
+        super.Print();
+    }
+}
+class Manager extends Employee {
+    public Print():void  {
+        super.firstName = "Tom";
+        super.lastName = "Hanks";
+        super.designation = "Manager";
+        super.Print();
+    }
+}
+let employees:Employee[] = [];
+employees[0] = new Developer();
+employees[1] = new Admin();
+employees[2] = new Manager();
+for(var employee of employees) {
+    employee.Print();
+}
+
+Task:
+          object - Print(add, a,b)	
+	       - Addition
+	       - Substraction
+	       - Multiplication
+	        
+
+
+
+
+
+
+
+
+
