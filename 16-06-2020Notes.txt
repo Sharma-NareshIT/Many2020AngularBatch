@@ -1,0 +1,146 @@
+		    Generics
+- Generic is TypeSafe
+- You can design TypeSafe components.
+- Generics allows  the user to  consume component and use them for their own types.
+- It improves reusability.
+- We can create a component that can work over a variety of types rather than a single one.
+- Generics will make components more flexible.
+- TypeScript can use Generic Properties, Constructor, Method or Class.
+
+Ex:
+function PrintValue<T>(arg:T):T {
+    return arg;
+}
+class Demo {
+    public Print(){
+        console.log(PrintValue<number>(10));
+        console.log(PrintValue<string>("Hello !"));
+    }
+}
+let obj = new Demo();
+obj.Print();
+
+- Any type of operations are not directly allowed on Generic types.
+- You have configure operations by using functions.
+- If a method is Generic type and expected with different return types then the return type must be defined as "any".
+
+
+Ex: Function as Generic Type
+
+function Sum(x:any,y:any){
+    return x + y;
+}
+function Concat(x:any, y:any) {
+    return `First Name=${x}\nLast Name=${y}`;
+}
+
+function PrintValue<T>(a:T, b:T):any {
+    if((typeof a)=="number" &&(typeof b)=="number"){
+        return Sum(a,b);
+    } else {
+        return Concat(a,b);
+    }    
+}
+class Demo {
+    public Print(){
+        console.log(PrintValue<number>(10,20));
+        console.log(PrintValue<string>("Raj","Kumar"));
+    }
+}
+let obj = new Demo();
+obj.Print();
+
+Ex: Generic methods with user defined types
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+}
+interface IEmployee {
+    Name:string;
+    Designation:string;
+}
+function GetData<T>(object:T) {
+    for(var property in object) {
+        console.log(`${property} : ${object[property]}`);
+    }
+}
+console.log(`Product Details:`);
+GetData<IProduct>({Name:"TV",Price:34000.33, InStock:true});
+console.log(`----------------`);
+console.log(`Employee Details:`);
+GetData<IEmployee>({Name: "John", Designation:"Manager"});
+
+Ex: Generic method handling Array type
+
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+}
+function GetData<T>(object:T) {
+    if(object instanceof Array) {
+        for(var item of object) {
+            console.log(item);
+        }
+    } else {
+        for(var property in object) {
+            console.log(`${property} : ${object[property]}`);
+        }
+    }
+   
+}
+console.log(`Product Details:`);
+GetData<IProduct>({Name:"TV",Price:34000.33, InStock:true});
+GetData<IProduct[]>([{Name:"Mobile", Price:12000.33, InStock:true},{Name:"Shoe",Price:2400.44, InStock:false}]);
+
+Ex:
+interface IProduct {
+    Name:string;
+    Price:number;
+    InStock:boolean;
+}
+function GetData<T>(object:T) {
+    if(object instanceof Array) {
+        for(var item of object) {
+            console.log(item);
+        }
+    } else {
+        for(var property in object) {
+            console.log(`${property} : ${object[property]}`);
+        }
+    }
+   
+}
+
+let products:IProduct[] = [{Name:"Mobile", Price:12000.33, InStock:true},{Name:"Shoe",Price:2400.44, InStock:false}];
+
+let product:IProduct = {
+    Name: "TV",
+    Price: 45000.55,
+    InStock:true
+};
+
+console.log(`Product Details:`);
+GetData<IProduct>(product);
+GetData<IProduct[]>(products);
+
+
+		  "Generic Class"
+Ex:
+class Demo<T>{
+    value:T;
+    add:(x:T, y:T)=>T;
+}
+let obj = new Demo<number>();
+obj.value = 10;
+obj.add = function(x,y) { return x + y};
+console.log(`Number=${obj.value}`);
+console.log(`Addition=${obj.add(10,20)}`);
+
+let obj2 = new Demo<string>();
+obj2.value="A";
+obj2.add = function(x, y) { return `Hello ! ${x} ${y}`};
+console.log(obj2.value);
+console.log(obj2.add("Raj","Kumar"));
