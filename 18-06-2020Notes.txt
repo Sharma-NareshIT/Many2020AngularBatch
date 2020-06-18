@@ -1,0 +1,148 @@
+Ex:
+let products = new Map();
+products.set(1, "Samsung TV");
+products.set(2, "Mobile");
+products.set(3, "Nike Casuals");
+
+products.delete(1);
+
+console.log(`---Keys---`);
+for(let key of Array.from(products.keys())) {
+    console.log(key);
+}
+console.log(`---Values---`);
+for(let value of Array.from(products.values())) {
+  console.log(value);
+}
+console.log(`---Entries---`);
+for(let entry of Array.from(products.entries())){
+    console.log(`${entry[0]} : ${entry[1]}`);
+}
+
+products.has(1) ;     // true or false
+products.clear();      // remove all items
+
+		    Set
+- Set is a collection of Keys and not Key value Pair.
+- Set uses following function
+
+	set()	- to add values
+	add()	- to add values
+	has()	- check existence of value
+	delete()	- delete a value
+	size	- return the size
+
+Syntax 
+	let set = new Set();
+	set.add()
+	set.delete()
+	set.has()
+	
+	for(let entry of set) {
+	    console.log(entiry);
+	}
+	
+	
+		     Enum
+- It is a collection of constants.
+- Enums allow us to define a set of named constants.
+- A collection of constants is required for any application when it needs initialization of values into memory automantically when application or component starts.
+
+FAQ: Where do you use these in Angular App?
+A:  Configuring Routes, Bundles, Styles, Scripts
+
+- Enum can have a collection of numeric constants, so that numbers can be accessed easily by using a reference name.
+
+Ex:
+enum StatusCodes {
+    NotFound = 404,
+    NotModified = 304,
+    OK = 200,
+    NoContent = 204
+}
+console.log(`Not Found : ${StatusCodes.NotFound}`);
+
+- Enum can define value for any undefined reference based on its pervious value.
+
+Ex:
+enum HttpVerbs {
+   GET=1,
+   POST,
+   PUT,
+   DELETE
+}
+console.log(`GET : ${HttpVerbs.GET}\nPOST : ${HttpVerbs.POST}`);
+
+O/P:
+  GET = 1
+  POST = 2
+
+ex:
+enum HttpVerbs {
+   GET,
+   POST=0,
+   PUT,
+   DELETE
+}
+console.log(`GET : ${HttpVerbs.GET}\nPOST : ${HttpVerbs.POST}`);
+
+O/P:
+ GET = 0;
+ POST = 0;
+
+
+Ex:
+enum HttpVerbs {
+   OPTIONS=1,
+   PURGE,
+   GET,
+   POST=0,
+   PUT,
+   DELETE
+}
+console.log(`GET : ${HttpVerbs.GET}\nPOST : ${HttpVerbs.POST}\nPurge : ${HttpVerbs.PURGE}\nOptions : ${HttpVerbs.OPTIONS}`);
+
+
+   Options = 1
+   PURGE = 2,
+   GET = 3,
+   POST=0,
+   PUT = 1,
+   DELETE=2
+
+- Enum can have collection of string constants
+- They don't have any auto incrementation.
+- Every constant must be initialized with a value.
+
+Ex:
+enum ErrorCodes {
+    NotFound = "Not Found",
+    OK = "OK",
+    MethodFound = "Method Found"
+}
+console.log(ErrorCodes.NotFound);
+
+- Enum can heterogeneous i.e collection of different types of constants.
+
+EX:
+enum decision {
+    Cancel,
+    Yes = "Yes",
+    No = 0,
+    UnKnown
+};
+console.log(`${decision.Yes}\n${decision.No}\n${decision.UnKnown}`);
+
+- Expression in Enum can contain the literal with operands the literal include
+	+, - , *, / , % , 
+	<< , >>, >>> , &, |, ^
+	 ~
+
+
+
+
+
+
+
+
+      
